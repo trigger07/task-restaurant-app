@@ -1,0 +1,23 @@
+{
+  "name": "server-restaurant-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/swagger": "^8.1.0",
+    "@fastify/swagger-ui": "^1.2.0",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.10.0",
+    "fastify-boom": "^1.0.0",
+    "mongoose": "^6.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
