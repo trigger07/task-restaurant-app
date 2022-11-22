@@ -3,13 +3,13 @@
 //set model
 const Staff = require("../models/staff.model");
 
-//clean previous data in collection
-Staff.collection.drop();
-
 // loop array with roles and populate initial data
 const populateData = async () => {
-    try{
-        let ep = new Array("Cooks", "Waiters");
+    try {
+        let ep = ["Waiters", "Cooks"];
+
+        //clean previous data in collection
+        await Staff.collection.drop();
 
         ep.forEach(async (role) => {
             const jsonData = require("../data/" + role + ".json");
@@ -18,8 +18,9 @@ const populateData = async () => {
                 data: jsonData
             });
             await staff.save();
+            console.log(role);
         });
-    }catch (err){
+    } catch (err) {
         console.log(err);
     }
 }
