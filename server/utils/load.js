@@ -11,6 +11,7 @@ const populateData = async () => {
         //clean previous data in collection
         await Staff.collection.drop();
 
+        //save documents
         ep.forEach(async (role) => {
             const jsonData = require("../data/" + role + ".json");
             const staff = new Staff({
@@ -18,7 +19,6 @@ const populateData = async () => {
                 data: jsonData
             });
             await staff.save();
-            console.log(role);
         });
     } catch (err) {
         console.log(err);

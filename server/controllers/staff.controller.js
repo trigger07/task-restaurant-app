@@ -1,6 +1,6 @@
 "use strict";
 
-const boom = require("boom");
+const boom = require("fastify-boom");
 const Staff = require("../models/staff.model");
 
 const GetCooks = async (req, reply) => {
