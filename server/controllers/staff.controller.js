@@ -3,6 +3,7 @@
 const boom = require("fastify-boom");
 const Staff = require("../models/staff.model");
 
+// Get data from Mongo by Role: cooks
 const GetCooks = async (req, reply) => {
     try {
         const cooks = await Staff.findOne({ role: 'Cooks' }).exec();
@@ -12,6 +13,7 @@ const GetCooks = async (req, reply) => {
     }
 };
 
+// Get data from Mongo by Role: waiters
 const GetWaiters = async (req, reply) => {
     try {
         const waiters = await Staff.findOne({ role: 'Waiters' }).exec();

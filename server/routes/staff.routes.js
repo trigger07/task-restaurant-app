@@ -2,6 +2,7 @@
 
 const controller = require("../controllers/staff.controller");
 
+// Routes array
 const routes = [
     {
         url: '/GetCooks',

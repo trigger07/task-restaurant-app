@@ -3,7 +3,7 @@
 const fastify = require("fastify")({ logger: true });
 
 //instantiate database
-const db = require("./utils/mongoose");
+require("./utils/mongoose");
 
 const dotenv = require("dotenv");
 const swagger = require("./utils/swagger");
@@ -19,7 +19,7 @@ fastify.register(require("@fastify/swagger-ui"), {});
 //default route
 fastify.get('/', async function (request, reply) {
     return { server: 'started' }
-})
+  })
 
 // load all routes
 staffRoutes.forEach((route) => {
@@ -30,7 +30,6 @@ staffRoutes.forEach((route) => {
 // initialize server
 const start = async () => {
     try {
-        await db;
         await fastify.listen({ port: process.env.PORT });
         await populateData();
 

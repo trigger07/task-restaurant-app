@@ -19,7 +19,10 @@ const populateData = async () => {
                 data: jsonData
             });
             await staff.save();
+
+            console.log(role);
         });
+        
     } catch (err) {
         console.log(err);
     }
